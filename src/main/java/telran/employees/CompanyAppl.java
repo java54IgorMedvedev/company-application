@@ -20,6 +20,7 @@ public class CompanyAppl {
 						new HashSet<String>(List.of("Audit", "Development", "QA")));
 		companyItems.add(Item.of("Exit & save",
 				io -> ((Persistable)company).save(FILE_NAME), true));
+		companyItems.add(Item.ofExit());
 		Menu menu = new Menu("Company CLI Application",
 				companyItems.toArray(Item[]::new));
 		menu.perform(new SystemInputOutput());
